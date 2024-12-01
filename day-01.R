@@ -1,4 +1,4 @@
-input <- read.table("./day-01/input.txt", sep = " ")
+input <- read.table("./input.txt", sep = " ")
 
 first <- sort(input[,1])
 second <- sort(input[,4])
