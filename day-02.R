@@ -49,7 +49,7 @@ safe_report <- function(report) {
    }
    
    # either all increase or all decrease *expectedly*
-   safe_reports[i] <- all(increasing_report) | all(decreasing_report)
+   all(increasing_report) | all(decreasing_report)
    
 }
 
