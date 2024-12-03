@@ -4,9 +4,7 @@ input <- readLines("./input.txt")
 
 mul_strings <- unlist(stringr::str_extract_all(input, "mul\\(\\d+,\\d+\\)"))
 
-ex_comma_strings <- stringr::str_replace_all(mul_strings, ",", "*")
-
-formula_strings <- stringr::str_remove_all(ex_comma_strings, "[mul\\(, \\)]")
+formula_strings <- stringr::str_replace_all(mul_strings, "mul", "`*`")
 
 numbers <- sapply(formula_strings, \(x) eval(parse(text=x))) 
 
@@ -36,9 +34,7 @@ for (i in seq_along(mul_strings)) {
 }
 
 
-ex_comma_strings <- stringr::str_replace_all(mul_strings, ",", "*")
-
-formula_strings <- stringr::str_remove_all(ex_comma_strings, "[mul\\(, \\)]")
+formula_strings <- stringr::str_replace_all(mul_strings, "mul", "`*`")
 
 numbers <- sapply(formula_strings, \(x) eval(parse(text=x))) 
 
