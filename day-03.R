@@ -4,9 +4,9 @@ input <- readLines("./input.txt")
 
 mul_strings <- unlist(stringr::str_extract_all(input, "mul\\(\\d+,\\d+\\)"))
 
-formula_strings <- stringr::str_replace_all(mul_strings, "mul", "`*`")
+mul <- function(...)  `*`(...)
 
-numbers <- sapply(formula_strings, \(x) eval(parse(text=x))) 
+numbers <- sapply(mul_strings, \(x) eval(parse(text=x))) 
 
 print(paste("result of corrupted multiplication", sum(numbers)))
 
@@ -34,8 +34,6 @@ for (i in seq_along(mul_strings)) {
 }
 
 
-formula_strings <- stringr::str_replace_all(mul_strings, "mul", "`*`")
-
-numbers <- sapply(formula_strings, \(x) eval(parse(text=x))) 
+numbers <- sapply(mul_strings, \(x) eval(parse(text=x))) 
 
 print(paste("result of enhanced multiplication", sum(numbers)))
