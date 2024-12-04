@@ -33,23 +33,6 @@ print(paste("count of XMAS (or SAMX)", count_xmas))
 
 # part two
 
-# input <- c(
-#  "MMMSXXMASM",
-#  "MSAMXMSMSA",
-#  "AMXSXMAAMM",
-#  "MSAMASMSMX",
-#  "XMASAMXAMM",
-#  "XXAMMXXAMA",
-#  "SMSMSASXSS",
-#  "SAXAMASAAA",
-#  "MAMMMXMMMM",
-#  "MXMXAXMASX")
-
-xvector <- unlist(strsplit(split = "", paste0(input, collapse = ""))) 
-
-xmatrix <- matrix(xvector, sqrt(length(xvector)), byrow = T)
-
-
 xdim <- dim(xmatrix)[1]
 
 count_xmas <- 0
